@@ -12,7 +12,7 @@
         }
 
         .clock-text {
-            font-size: clamp(80px, 22vw, 140px);
+            font-size: clamp(100px, 25vw, 160px);
             line-height: 1;
             transition: font-size 0.3s ease;
         }
@@ -640,9 +640,11 @@
             saveSettings();
         }
 
-        setInterval(updateClock, 1000);
-        updateClock();
-        loadSettings();
+        document.addEventListener('DOMContentLoaded', () => {
+            setInterval(updateClock, 1000);
+            updateClock();
+            loadSettings();
+        });
 
         document.getElementById('toggle-btn').addEventListener('click', () => {
             appearance = appearance === 'light' ? 'default' : 'light';
